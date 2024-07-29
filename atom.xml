@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>INSOMNIA</title>
+  
+  <subtitle>怎么才能睡好觉</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://luffys93.github.io/"/>
+  <updated>2024-07-29T05:34:18.859Z</updated>
+  <id>http://luffys93.github.io/</id>
+  
+  <author>
+    <name>Ins0mn1a</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://luffys93.github.io/2024/07/29/hello-world/"/>
+    <id>http://luffys93.github.io/2024/07/29/hello-world/</id>
+    <published>2024-07-29T05:34:18.859Z</published>
+    <updated>2024-07-29T05:34:18.859Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://luffys93.github.io/2019/11/25/self-talking/index/"/>
+    <id>http://luffys93.github.io/2019/11/25/self-talking/index/</id>
+    <published>2019-11-25T06:49:08.000Z</published>
+    <updated>2024-07-29T08:24:10.619Z</updated>
+    
+    <content type="html"><![CDATA[<div class = "text-center"><h1>碎碎念</h1></div><div class = "text-tips"><p>tips：github登录后按时间正序查看、可点赞加❤️、本插件<a href="https://github.com/removeif/gitalk">地址</a>..<span id="busuanzi_container_page_pv">「<span id="busuanzi_value_page_pv">+99</span>次查看」</span></div></p><div id="comment-container1"><div class="text-tips">碎碎念加载中，请稍等...</div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"/><script>    $.getScript("/js/gitalk_self.min.js", function () {        var gitalk = new Gitalk({            clientID: '46a9f3481b46ea0129d8',            clientSecret: '79c7c9cb847e141757d7864453bcbf89f0655b24',            id: '666666',            repo: 'issue_database',            owner: 'removeif',            admin: "removeif",            createIssueManually: true,            distractionFreeMode: false        });        gitalk.render('comment-container1');    });</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class = &quot;text-center&quot;&gt;&lt;h1&gt;碎碎念&lt;/h1&gt;&lt;/div&gt;&lt;div class = &quot;text-tips&quot;&gt;
+
+&lt;p&gt;tips：github登录后按时间正序查看、可点赞加❤️、本插件&lt;a href=&quot;https://github.com/remov
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://luffys93.github.io/2019/09/09/friend/index/"/>
+    <id>http://luffys93.github.io/2019/09/09/friend/index/</id>
+    <published>2019-09-09T10:52:09.000Z</published>
+    <updated>2024-07-29T08:25:17.957Z</updated>
+    
+    <content type="html"><![CDATA[<div class="friend-title-item"><br>申请友链须知<br><br><hr></div><ul><li>原则上只和技术类博客交换，但不包括含有和色情、暴力、政治敏感的网站。</li><li>不和剽窃、侵权、无诚信的网站交换，优先和具有原创作品的网站交换。</li><li>申请请提供：站点名称、站点链接、站点描述、<strong>logo或头像</strong>（<code>不要设置防盗链</code>）。</li><li>排名不分先后，刷新后重排，更新信息后请留言告知。</li><li>会定期清理很久很久不更新的、不符合要求的友链，不再另行通知。</li><li>本站不存储友链图片，如果友链图片换了无法更新。图片裂了的会替换成默认图，需要更换的请留言告知。</li><li>本站友链信息如下，申请友链前请先添加本站信息：<br>  网站图标：<a href="https://removeif.github.io/images/avatar.jpg">https://removeif.github.io/images/avatar.jpg</a><br>  网站名称：辣椒の酱<br>  网站地址：<a href="https://removeif.github.io">https://removeif.github.io</a><br>  网站简介：后端开发，技术分享</li></ul><script type="text/javascript" defer src="/js/friend.js"></script><div class="links-content">加载中，稍等几秒...</div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class=&quot;friend-title-item&quot;&gt;&lt;br&gt;申请友链须知&lt;br&gt;&lt;br&gt;&lt;hr&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;原则上只和技术类博客交换，但不包括含有和色情、暴力、政治敏感的网站。&lt;/li&gt;
+&lt;li&gt;不和剽窃、侵权、无诚信的网站交换，优先和具有原创作品
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>音乐歌单收藏</title>
+    <link href="http://luffys93.github.io/2019/07/30/music/index/"/>
+    <id>http://luffys93.github.io/2019/07/30/music/index/</id>
+    <published>2019-07-30T02:43:45.000Z</published>
+    <updated>2024-07-29T08:24:10.618Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js style="width: auto;height: 2000px;"    server="netease"    type="playlist"    id="2364053447"    theme="#2980b9"    loop="all"    autoplay="false"    order="list"    storageName="aplayer-setting"    lrctype= 0    list-max-height="800px"    ></meting-js><p style="text-align:center;margin-top:30px"><span style="font-size:14px">温馨提示：选择喜欢的音乐双击播放，由于版权原因部分不能播放。如果喜欢歌单<a href="https://music.163.com/#/user/home?id=132033817" target="_blank" rel="noopener">收藏</a>一下，去网易云都能播放哟！<span></span></span></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/aplayer/d
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://luffys93.github.io/2019/07/30/media/index/"/>
+    <id>http://luffys93.github.io/2019/07/30/media/index/</id>
+    <published>2019-07-30T01:33:48.000Z</published>
+    <updated>2024-07-29T08:24:10.616Z</updated>
+    
+    <content type="html"><![CDATA[<div class="music-container">    <div class="music-player">        <div class="d-title">                <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐        </div>        <br/>    </div>    <div id="musicarea">        <div class="music"></div>        <p id="p_message"><span id="music_story_message" class="span_animation"></span></p>        <br/>        <ul id="musiclist"></ul>        <br/>        <div id="desc"></div>    </div></div><link rel="stylesheet" href="/css/meplayer.min.css"/><script type="text/javascript" defer src="/js/meplayer.js"></script><script type="text/javascript" defer src="/js/music.js"></script><br/><p style = "text-align:center"><span style="font-size:13px;">音乐播放器由<a href="https://github.com/newraina/mePlayer" target="_blank" rel="noopener">mePlayer</a>提供，布局参照<a href="https://dp2px.com/music/" target="_blank" rel="noopener">网友博客</a>所作，感谢作者的辛勤付出。更多音乐分享请查看<a href="https://removeif.github.io/music/">歌单</a>。</span></p><link rel="stylesheet" href="/css/DPlayer.min.css"/><br/><br/><div class="video-player">    <div class="d-title">            <i class="fa fa-video-camera"></i>&nbsp;&nbsp;看看视频    </div>    <br/>    <p class="hits">->点击以下条目开始播放视频,向下滑动查看更多<-</p>    <div id="video-list"></div>    <br/>    <div id="dplayer"><br/></div></div><script src="/js/DPlayer.min.js"></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class=&quot;music-container&quot;&gt;
+    &lt;div class=&quot;music-player&quot;&gt;
+        &lt;div class=&quot;d-title&quot;&gt;
+                &lt;i class=&quot;fa fa-music&quot;&gt;&lt;/i&gt;&amp;nbsp;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://luffys93.github.io/2019/07/29/album/index/"/>
+    <id>http://luffys93.github.io/2019/07/29/album/index/</id>
+    <published>2019-07-29T08:28:26.000Z</published>
+    <updated>2024-07-29T08:24:10.615Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="🎈🎈微笑墙🎈🎈"><a href="#🎈🎈微笑墙🎈🎈" class="headerlink" title="🎈🎈微笑墙🎈🎈"></a>🎈🎈微笑墙🎈🎈</h1><blockquote><p><strong>彭小苒</strong></p></blockquote><div class="justified-gallery"><p><img src="https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20201030171213.png" alt="彭小苒"><br><img src="https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20201030171254.png" alt="彭小苒"><br><img src="https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20201030171333.png" alt="彭小苒"></p></div><br><blockquote><p><strong>唐艺昕</strong></p></blockquote><div class="justified-gallery"><p><img src="https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20201030171425.png" alt="唐艺昕"></p></div><br><blockquote><p><strong>李一桐</strong></p></blockquote><div class="justified-gallery"><p><img src="https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20201030171645.png" alt="李一桐"><br><img src="https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20201030171729.png" alt="李一桐"></p></div><br><blockquote><p><strong>gakki</strong></p></blockquote><div class="justified-gallery"><p><img src="https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20201030171851.png" alt="gakki"></p></div><br><hr><p>图片搜集于互联网，侵权请<a href="https://removeif.github.io/message/">留言</a>，马上处理😊。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;🎈🎈微笑墙🎈🎈&quot;&gt;&lt;a href=&quot;#🎈🎈微笑墙🎈🎈&quot; class=&quot;headerlink&quot; title=&quot;🎈🎈微笑墙🎈🎈&quot;&gt;&lt;/a&gt;🎈🎈微笑墙🎈🎈&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;彭小苒&lt;/strong&gt;&lt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://luffys93.github.io/2018/11/11/about/index/"/>
+    <id>http://luffys93.github.io/2018/11/11/about/index/</id>
+    <published>2018-11-11T00:24:49.000Z</published>
+    <updated>2024-07-29T08:24:10.614Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h4><hr><p>分享很喜欢的<a href="https://baike.baidu.com/item/%E7%BD%97%E6%B0%B8%E6%B5%A9/26814?fr=aladdin">老罗</a>的一段话：</p><blockquote><p>“<strong><em>每一个生命来到世间都注定改变世界，别无选择。要么变得好一点，要么变得坏一点。你如果走进社会为了生存为了什么不要脸的理由，变成了一个恶心的成年人社会中的一员，那你就把这个世界变得恶心了一点点。如果你一生刚正不阿，如果你一生耿直，没有做任何恶心的事情，没做对别人有害的事情，一辈子拼了老命勉强把自己身边的几个人照顾好了，没有成名没有发财，没有成就伟大的事业，然后耿着脖子一生正直，到了七八十岁耿着脖子去世了。你这一生是不是没有改变世界？你还是改变世界了，你把这个世界变得美好了一点点。因为世界上又多了一个好人。</em></strong>“</p></blockquote><p>善恶终有报,天道好轮回。不信抬头看,苍天饶过谁。<br>无论何时何地，我们都要保持一颗积极乐观、善良感恩的心。<br>但行好事莫问前程，永远年轻，永远热内盈眶，永远保持<strong>正能量</strong>。<br>💪💪💪💪💪💪冲鸭！！！！</p><p>-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>个人信息：<br>计算机科学与技术专业<br>从事JAVA后端开发<br>码畜一枚<br>坚信代码改变世界</p><br><h4 id="博客信息"><a href="#博客信息" class="headerlink" title="博客信息"></a>博客信息</h4><hr><ul><li>网站采用的<a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus主题</a> </li><li>追求尽可能的简洁，清晰，易用。</li><li>在Icarus主题之上进行了部分修改。</li></ul><p><strong><em>更新日志：</em></strong><br>–<em>2020.09.20：icarus4.0适配</em><br>–<em>2020.01.18：icarus3.0适配</em><br>–<em>2019.11.17：增加深色主题开关</em><br>–<em>2019.10.30：去图，精简卡片</em><br>–<em>2019.10.22：改版部分显示，优化速度</em><br>–<em>2019.10.16：文章列表加上评论数显示</em><br>–<em>2019.10.13：改版评论</em><br>–<em>2019.09.25：图片、资源接入CDN免费jsDelivr、文章加入置顶</em><br>–<em>2019.09.19：开源<a href="https://github.com/removeif/hexo-theme-icarus-removeif">博客代码</a></em><br>–<em>2019.09.19：修改布局，拉伸布局，更宽的展示</em><br>–<em>2019.09.18：修改友链ui为一行三个，并适配移动端，暗黑模式文章增加评论链接，增加留言链接</em><br>–<em>2019.09.14：增加<a href="https://removeif.github.io/remove.io/">精简next主题</a></em><br>–<em>2019.09.14：利用中秋节放假，重做了首页的热门推荐、加个widget最新评论框、归档页加入文章贡献概览面板</em></p><br><h4 id="本站推荐索引"><a href="#本站推荐索引" class="headerlink" title="本站推荐索引"></a>本站推荐索引</h4><hr><p><strong>博客主题相关</strong></p><ul><li><a href="https://removeif.github.io/theme/github-Issue-作为博客微型数据库的应用.html">github Issue 作为博客微型数据库的应用</a></li><li><a href="https://removeif.github.io/theme/github-page网站cdn优化加速.html">github page网站cdn优化加速</a></li><li><a href="https://removeif.github.io/theme/博客源码分享.html">博客源码分享</a></li><li><a href="https://removeif.github.io/theme/博客换肤的一种实现方式思路.html">博客换肤的一种实现方式思路</a></li><li><a href="https://removeif.github.io/theme/博客中gitalk最新评论的获取.html">博客中gitalk最新评论的获取</a></li><li><a href="https://removeif.github.io/theme/博客图片上传picgo工具github图传使用.html">博客图片上传picgo工具github图传使用</a></li><li><a href="https://removeif.github.io/theme/安装、部分配置icarus主题中文版.html">安装、部分配置icarus主题中文版</a></li></ul><p><strong>技术知识点</strong></p><ul><li><a href="https://removeif.github.io/java/basic/Java%E5%B9%B6%E5%8F%91%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9.html">Java并发知识点</a><br></li></ul><p><strong>法律法规</strong></p><ul><li><a href="http://search.chinalaw.gov.cn/search2.html">法律法规数据库</a></li><li><a href="https://removeif.github.io/law/中华人民共和国国旗法.html">中华人民共和国国旗法</a></li><li><a href="https://removeif.github.io/law/中华人民共和国宪法.html">中华人民共和国宪法</a></li><li><a href="https://removeif.github.io/law/中华人民共和国消费者权益保护法.html">中华人民共和国消费者权益保护法</a></li><li><a href="https://removeif.github.io/law/中华人民共和国刑事诉讼法.html">中华人民共和国刑事诉讼法</a></li><li><a href="https://removeif.github.io/law/中华人民共和国婚姻法.html">中华人民共和国婚姻法</a></li><li><a href="https://removeif.github.io/law/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95.html">中华人名共和国网络安全法</a>  </li><li><a href="https://removeif.github.io/law/中华人民共和国劳动法.html">中华人民共和国劳动法</a><br></li></ul><p><strong>其他</strong></p><ul><li><a href="https://removeif.github.io/music1/">网易云音乐歌单分享</a></li></ul><br><h4 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h4><p><strong>2020计划</strong></p><hr><p>2019.12.31</p><blockquote><p><strong>2020-GOALS</strong>              </p><ul><li><input disabled="" type="checkbox"> 跑两三场马拉松</li></ul></blockquote><p><strong>2019计划</strong></p><hr><p>2018.12.31/21:59:00-&gt;更新于2019.12.31</p><blockquote><p><strong>2019-GOALS</strong></p><ul><li><input checked="" disabled="" type="checkbox"> 购买的专业书籍至少看完一遍（并发、重构、设计模式…）-&gt; 95%</li></ul><p><strong>额外：</strong></p><ul><li><input checked="" disabled="" type="checkbox"> 追了很多剧</li></ul><p><strong>总结：</strong></p><ul><li>有优点有缺点，没坚持下来的还是太多，追了太多剧。以后多学习，多思考！</li></ul></blockquote><br><h4 id="时间轴记录"><a href="#时间轴记录" class="headerlink" title="时间轴记录"></a>时间轴记录</h4><hr><div class="time-axis-main">    <ul class="time-axis"></ul></div><script src="/js/about-me.js"></script><br><br>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;个人简介&quot;&gt;&lt;a href=&quot;#个人简介&quot; class=&quot;headerlink&quot; title=&quot;个人简介&quot;&gt;&lt;/a&gt;个人简介&lt;/h4&gt;&lt;hr&gt;
+&lt;p&gt;分享很喜欢的&lt;a href=&quot;https://baike.baidu.com/item/%E7%BD%97%E6%
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://luffys93.github.io/2018/11/11/message/index/"/>
+    <id>http://luffys93.github.io/2018/11/11/message/index/</id>
+    <published>2018-11-11T00:24:49.000Z</published>
+    <updated>2024-07-29T08:24:10.617Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>来而不往非礼也</strong><br><strong>畅所欲言，有留必应</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;来而不往非礼也&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;畅所欲言，有留必应&lt;/strong&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
