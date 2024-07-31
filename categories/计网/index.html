@@ -30,7 +30,7 @@
 <p>服务器：在会话开始时等待联系的进程。</p>
 <h4 id="进程与计算机网络之间的接口"><a href="#进程与计算机网络之间的接口" class="headerlink" title="进程与计算机网络之间的接口"></a>进程与计算机网络之间的接口</h4><p>进程通过一个<strong>套接字</strong>的软件接口向网络发送报文和从网络接收报文</p>
 <p>下图是两个通过因特网通信的进程之间的套接字通信</p>
-<p><img src="./Computer-Internet2.assets/image-20240326223829224.png" alt="image-20240326223829224"></p>
+<p><img src="./Computer-Internet2/image-20240326223829224.png" alt="image-20240326223829224"></p>
 <p>在这个图中，套接字是同一台主机内应用层与运输层的接口，也是建立网络应用程序的可编程接口，因此也被称为<strong>网络应用程序接口</strong>（Application Programming Interface，API）</p>
 <h5 id="应用程序开发者对套接字的管理"><a href="#应用程序开发者对套接字的管理" class="headerlink" title="应用程序开发者对套接字的管理"></a>应用程序开发者对套接字的管理</h5><p>从开发者的角度看，他们能够==控制套接字在应用层上的一切==。</p>
 <p>对运输层的套接字的控制几乎是手足无措的，仅限于</p>
@@ -58,14 +58,14 @@
 <p><strong>弹性应用（elastic application）</strong>：说白了，能够根据带宽状态动态调整吞吐量。</p>
 <h3 id="因特网提供的运输服务"><a href="#因特网提供的运输服务" class="headerlink" title="因特网提供的运输服务"></a>因特网提供的运输服务</h3><p>因特网为应用程序提供了两个运输层协议，分别为==UDP和TCP==。</p>
 <p>附：应用程序的服务要求</p>
-<p><img src="./Computer-Internet2.assets/image-20240403182749113.png" alt="image-20240403182749113"></p>
+<p><img src="./Computer-Internet2/image-20240403182749113.png" alt="image-20240403182749113"></p>
 <h4 id="TCP服务"><a href="#TCP服务" class="headerlink" title="TCP服务"></a>TCP服务</h4><p>TCP服务的模型包括：==面向连接服务和可靠数据传输服务==</p>
 <p>有拥塞控制机制</p>
 <h4 id="UDP服务"><a href="#UDP服务" class="headerlink" title="UDP服务"></a>UDP服务</h4><p>UDP仅提供最小的服务，是无连接的，因此在进行连接的时候没有握手过程，且并不能保证报文能到达接收进程，到了也有可能是乱序的</p>
 <p>没有拥塞控制机制（不过有的时候，实际的端到端吞吐量可能小于选定的任意速率，因为中间链路的带宽可能会受限或者拥塞导致的）</p>
 <h4 id="因特网不提供的服务"><a href="#因特网不提供的服务" class="headerlink" title="因特网不提供的服务"></a>因特网不提供的服务</h4><p>运输层协议不提供吞吐量和定时保证的服务</p>
 <p>下图是因特网应用所使用的协议</p>
-<p><img src="./Computer-Internet2.assets/image-20240403191549255.png" alt="image-20240403191549255"></p>
+<p><img src="./Computer-Internet2/image-20240403191549255.png" alt="image-20240403191549255"></p>
 <h3 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h3><p>定义了运行在不同端系统上的应用程序进程如何相互传递报文。</p>
 <ol>
 <li>交换的报文类型，例如请求报文，响应报文</li>
@@ -81,7 +81,7 @@
 <p>HTML基本文件是通过对象的URL地址来引用页面的其他对象，形如<code>http://www.example.com/path/to/sth</code>都是URL地址，其中<code>www.example.com</code>是主机名，而<code>/path/to/sth</code>是路径名</p>
 <p>:::</p>
 <p>HTTP定义了Web客户向Web服务器请求Web页面的方式，以及服务器向客户传送Web页面的方式，基本思想如下图：</p>
-<p><img src="./Computer-Internet2.assets/image-20240408195027295.png" alt="image-20240408195027295"></p>
+<p><img src="./Computer-Internet2/image-20240408195027295.png" alt="image-20240408195027295"></p>
 <ol>
 <li>用户请求一个Web页面；</li>
 <li>浏览器向服务器发出该页面中所包含对象的HTTP请求报文；</li>
@@ -105,7 +105,7 @@
 <p>:::info 估算从请求到完全接收的时间</p>
 <p><strong>往返时间（RTT，Round-Trip Time）</strong>：指一个短分组从客户到服务器然后再返回客户所花费的时间</p>
 <p>RTT包括分组传播时延、分组在中间路由器和交换机上的排队时延和分组处理时延。</p>
-<p><img src="./Computer-Internet2.assets/image-20240408202857646.png" alt="image-20240408202857646"></p>
+<p><img src="./Computer-Internet2/image-20240408202857646.png" alt="image-20240408202857646"></p>
 <p>（涉及到三次握手，这个后面再说）</p>
 <ol>
 <li>客户请求Web页面时，会先请求建立一个TCP连接。客户向服务器发送一个TCP报文段，服务器再向客户发送一个TCP报文段来作出请求与回应；（占用一个RTT）</li>
@@ -125,7 +125,7 @@
 </ol>
 <p>:::</p>
 <h3 id="HTTP报文格式"><a href="#HTTP报文格式" class="headerlink" title="HTTP报文格式"></a>HTTP报文格式</h3><h4 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h4><p>拿书上的例子说说：</p>
-<p><img src="./Computer-Internet2.assets/image-20240408204922748.png" alt="image-20240408204922748"></p>
+<p><img src="./Computer-Internet2/image-20240408204922748.png" alt="image-20240408204922748"></p>
 <p>第一行为<strong>请求行（request line）</strong>，后面的全部为<strong>首部行（header line）</strong>。</p>
 <p>上图可以看出，请求行有三个部分：方法字段、URL字段和HTTP版本字段。其中，请求方法有很多：==GET、POST、DELETE、PUT、HEAD==。</p>
 <p>再来看看首部行：</p>
@@ -136,9 +136,9 @@
 <li>Accept-language：表示用户想得到该对象的语言版本，服务器不存在这样的对象就发送默认语言版本</li>
 </ol>
 <p>下图是请求报文的通用格式：</p>
-<p><img src="./Computer-Internet2.assets/image-20240408205838564.png" alt="image-20240408205838564"></p>
+<p><img src="./Computer-Internet2/image-20240408205838564.png" alt="image-20240408205838564"></p>
 <h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><p>接着拿书上的例子</p>
-<p><img src="./Computer-Internet2.assets/image-20240408205945431.png" alt="image-20240408205945431"></p>
+<p><img src="./Computer-Internet2/image-20240408205945431.png" alt="image-20240408205945431"></p>
 <p>响应报文有三个部分：一个初始状态行（status line），若干个首部行（header line），实体体（entity body）</p>
 <p>状态行包含三个信息：协议版本字段，状态码，状态信息</p>
 <p>首部行：</p>
@@ -157,7 +157,7 @@
 <p>不过呢，不同的浏览器cookie肯定是不同的，例如火狐登录了csdn，之后就可以省去登录步骤；IE没有登陆过，必须要登录</p>
 <p>当然，咱之前玩的小游戏有需要存档的，也用到了cookie</p>
 <p>下图表示cookie跟踪用户的状态</p>
-<p><img src="./Computer-Internet2.assets/image-20240408211022491.png" alt="image-20240408211022491"></p>
+<p><img src="./Computer-Internet2/image-20240408211022491.png" alt="image-20240408211022491"></p>
 <p>根据上图可以得知，cookie技术有四个组件：</p>
 <ol>
 <li>HTTP响应报文的一个cookie首部行；</li>
@@ -172,7 +172,7 @@
 <h3 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h3><p><strong>Web缓存器（Web cache）</strong>也叫<strong>代理服务器（proxy server）</strong>，它是能够代表初始Web服务器来满足HTTP请求的网络空间实体。</p>
 <p>其中，Web缓存器有自己的磁盘存储空间，并在存储空间中保存最近请求过的对象的副本。</p>
 <p>还是拿书上的例子，看下图：</p>
-<p><img src="./Computer-Internet2.assets/image-20240409084203339.png" alt="image-20240409084203339"></p>
+<p><img src="./Computer-Internet2/image-20240409084203339.png" alt="image-20240409084203339"></p>
 <p>现在客户配置的浏览器都可以使他们的HTTP请求首先指向Web缓存器，以<code>http://www.example.com/path/to/sth</code>为例，现在浏览器正在请求该对象，来看看都发生了什么：</p>
 <ol>
 <li>浏览器创建了一个到Web缓存器的TCP连接，并向Web缓存器中的对象发送一个HTTP请求；</li>
@@ -187,23 +187,23 @@
 <p>如果一个请求报文中用到了GET方法，并且该报文的首部行还有包含If-Modified-Since，那么这个HTTP请求报文就是一个条件GET请求报文。</p>
 <p>拿书上的例子简单举例，这个倒并不是很重要：</p>
 <p>某个代理缓存器代表某个浏览器向某个Web服务器发送了一个请求报文</p>
-<p><img src="./Computer-Internet2.assets/image-20240409092203740.png" alt="image-20240409092203740"></p>
+<p><img src="./Computer-Internet2/image-20240409092203740.png" alt="image-20240409092203740"></p>
 <p>然后，Web服务器发送了包含该对象的HTTP响应报文</p>
-<p><img src="./Computer-Internet2.assets/image-20240409092348120.png" alt="image-20240409092348120"></p>
+<p><img src="./Computer-Internet2/image-20240409092348120.png" alt="image-20240409092348120"></p>
 <p>可以看出，缓存器接收了报文，也在本地存储了这个对象，同时也存储了该对象的最后修改日期。</p>
 <p>一段时间后，另一个用户向这个缓存器请求同一个对象，由于该对象可能已经被修改，因此在用户请求后，该缓存器会向服务器发送一个条件GET请求来进行检查：</p>
-<p><img src="./Computer-Internet2.assets/image-20240409093035321.png" alt="image-20240409093035321"></p>
+<p><img src="./Computer-Internet2/image-20240409093035321.png" alt="image-20240409093035321"></p>
 <p>如果该对象没有修改，那么服务器就会向缓存器发送如下响应报文：</p>
-<p><img src="./Computer-Internet2.assets/image-20240409093126679.png" alt="image-20240409093126679"></p>
+<p><img src="./Computer-Internet2/image-20240409093126679.png" alt="image-20240409093126679"></p>
 <p>报文说明对象没有修改，缓存器可以使用这个对象，最后缓存器把这个对象的副本发送给用户</p>
 <h2 id="因特网中的电子邮件"><a href="#因特网中的电子邮件" class="headerlink" title="因特网中的电子邮件"></a>因特网中的电子邮件</h2><p>这个简单说说就行，感觉不太重要</p>
 <p>先上一个因特网电子邮件系统的总体概况图：</p>
-<p><img src="./Computer-Internet2.assets/image-20240409104905295.png" alt="image-20240409104905295"></p>
+<p><img src="./Computer-Internet2/image-20240409104905295.png" alt="image-20240409104905295"></p>
 <p>可以看到，电子邮件分为三个主要部分：==用户代理（user agent），邮件服务器（mail server），简单邮件传输协议（Simple Mail Transfer Protocol，SMTP）==。</p>
 <h3 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h3><p>==SMTP是因特网电子邮件中的主要协议==。它使用TCP可靠数据传输服务，从发送方的邮件服务器向接收方的邮件服务器发送邮件。</p>
 <p>跟许多应用层协议一样，SMTP也有两个部分：运行在发送方邮件服务器的客户端，运行在接收方服务器的服务器端。</p>
 <p>上一个发送端向接收端发送一个邮件的过程图：</p>
-<p><img src="./Computer-Internet2.assets/image-20240409110157180.png" alt="image-20240409110157180"></p>
+<p><img src="./Computer-Internet2/image-20240409110157180.png" alt="image-20240409110157180"></p>
 <ol>
 <li>Alice调用邮件代理程序并提供Bob的邮件地址，撰写报文后指示代理发送报文；</li>
 <li>Alice用户代理发送报文到她的邮件服务器，报文被放在报文队列当中；</li>
@@ -230,7 +230,7 @@
 <li>在处理包含文本和图形的文档时，HTTP将每个对象封装到对应的不同响应报文中（就是一对一封装），SMTP将所有的对象放在一个报文中。</li>
 </ol>
 <h3 id="邮件报文格式"><a href="#邮件报文格式" class="headerlink" title="邮件报文格式"></a>邮件报文格式</h3><p>不赘述，看看图就行</p>
-<p><img src="./Computer-Internet2.assets/image-20240409115819761.png" alt="image-20240409115819761"></p>
+<p><img src="./Computer-Internet2/image-20240409115819761.png" alt="image-20240409115819761"></p>
 <p>From和To是必须要有的</p>
 <p>后面可能只有一个Subject首部行，也可能有其他多个可选的首部行</p>
 <h3 id="邮件访问协议"><a href="#邮件访问协议" class="headerlink" title="邮件访问协议"></a>邮件访问协议</h3><p>目前流行的邮件访问协议：<strong>第三版邮局协议（Post Office Protocol–Version 3，POP3）</strong>，<strong>因特网邮件访问协议（Internet Mail Access Protocol，IMAP）</strong>，<strong>HTTP</strong></p>
@@ -269,11 +269,11 @@
 <h5 id="分布式、层次数据库"><a href="#分布式、层次数据库" class="headerlink" title="分布式、层次数据库"></a>分布式、层次数据库</h5><p>为了解决扩展性问题，DNS使用了大量的DNS服务器，以层次方式组织，并且分布在全世界范围内。</p>
 <p>这种方式一般有3种DNS服务器：==根DNS服务器，顶级域（Top-Level Domain，TLD）DNS服务器，权威DNS服务器。==</p>
 <p>下图为部分DNS服务器的层次结构：</p>
-<p><img src="./Computer-Internet2.assets/image-20240409153556448.png" alt="image-20240409153556448"></p>
+<p><img src="./Computer-Internet2/image-20240409153556448.png" alt="image-20240409153556448"></p>
 <p>除了以上服务器之外，还有一类重要的DNS服务器称为<strong>本地DNS服务器（local DNS server）</strong>，虽然它不属于层次结构里面的任何服务器，但是对层次结构十分重要。</p>
 <p>一台主机如何得知另一台主机的IP地址呢？</p>
 <p>举个例子：（请求主机设为A，目标主机设为B）</p>
-<p><img src="./Computer-Internet2.assets/image-20240409154512745.png" alt="image-20240409154512745"></p>
+<p><img src="./Computer-Internet2/image-20240409154512745.png" alt="image-20240409154512745"></p>
 <ol>
 <li>主机A向它的本地DNS服务器发送一个DNS查询报文，报文包含了被转换的主机名B；</li>
 <li>本地DNS服务器将报文转发给根DNS服务器；</li>
@@ -289,7 +289,7 @@
 <p>上述例子利用了<strong>递归查询（recursive query）</strong>和<strong>迭代查询（iterative query）</strong>。</p>
 <p>从主机到本地DNS服务器是递归查询，其余的均为迭代查询，因为所有的响应都是返回给本地DNS服务器的。</p>
 <p>递归查询的例子如下图：</p>
-<p><img src="./Computer-Internet2.assets/image-20240409160604713.png" alt="image-20240409160604713"></p>
+<p><img src="./Computer-Internet2/image-20240409160604713.png" alt="image-20240409160604713"></p>
 <p>这是不是就相当于之前学的递归呢，例如斐波那契额数列，调用函数本身，最终的结果是函数本身返回的值。</p>
 <p>:::</p>
 <h5 id="DNS缓存"><a href="#DNS缓存" class="headerlink" title="DNS缓存"></a>DNS缓存</h5><p>相当于在本地DNS服务器添加了一个DNS缓存器，用于存储每一个接收到的回答，可以绕过根服务器，便于请求主机在请求相同的地址时可以直接返回该IP地址，节省了时间，也节省了资源。</p>
@@ -303,7 +303,7 @@
 <li>Type=MX，则Name就是域名，Value是与之对应的邮件服务器的规范主机名</li>
 </ol>
 <h4 id="DNS报文"><a href="#DNS报文" class="headerlink" title="DNS报文"></a>DNS报文</h4><p>以下是DNS报文格式：</p>
-<p><img src="./Computer-Internet2.assets/image-20240409163119252.png" alt="image-20240409163119252"></p>
+<p><img src="./Computer-Internet2/image-20240409163119252.png" alt="image-20240409163119252"></p>
 <p>先说说前12个字节首部区域：</p>
 <ol>
 <li>标识符是16比特的数，用于标识该查询。该标识符会被复制到对应的回答报文中，以便匹配发送的请求和收到的回答；</li>
@@ -323,7 +323,7 @@
 <p><strong>nslookup程序</strong>能够做到让正在工作的主机直接向某些DNS服务器发送一个DNS查询报文。</p>
 <p>:::</p>
 <h2 id="P2P文件分发"><a href="#P2P文件分发" class="headerlink" title="P2P文件分发"></a>P2P文件分发</h2><p>根据书上例子，假设服务器要将一个文件分发给一个固定的对等方集合，其中服务器与对等方使用接入链路与因特网相连，如下图所示</p>
-<p><img src="./Computer-Internet2.assets/image-20240410151402082.png" alt="image-20240410151402082"></p>
+<p><img src="./Computer-Internet2/image-20240410151402082.png" alt="image-20240410151402082"></p>
 <p>设u<sub>s</sub>为服务器接入链路的上传速率，u<sub>i</sub>表示第i个对等方接入链路的上传速率，d<sub>i</sub>表示第i个对等方接入链路的下载速率，F表示被分发的文件长度（单位一般为bit），N表示对等方的数量，D<sub>cs</sub>是客户-服务器体系结构的分发时间。</p>
 <p><strong>分发时间（distribution time）</strong>是所有N个对等方得到该文件的副本所需的时间。</p>
 <p>为了排除影响，这里的环境假设为：因特网核心有足够的带宽（所以速率的瓶颈都在接入链路），服务器与客户没有参与任何其他网络应用（上传与下载的带宽能够全部用来发放该文件）</p>
@@ -344,7 +344,7 @@
 <p>综上，设D<sub>P2P</sub>为P2P体系结构下的最小分发时间，得到</p>
 <p>​                                                                                ==D<sub>P2P</sub> = max{F / u<sub>s</sub>,F / d<sub>min</sub>,NF / (u<sub>s</sub> + u<sub>total</sub>)}==</p>
 <p>下图是两个结构的分发时间的变化趋势</p>
-<p><img src="./Computer-Internet2.assets/image-20240410154325767.png" alt="image-20240410154325767"></p>
+<p><img src="./Computer-Internet2/image-20240410154325767.png" alt="image-20240410154325767"></p>
 </div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/%E8%AE%A1%E7%BD%91/">计网</a></div>  <hr></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2024-03-10  <a class="commentCountImg" href="/2024/03/10/ComputerInternet/Computer-Internet/#comment-container"><span class="display-none-class">1f84a3c6c75b9a9cbe97c57b733acece</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="1f84a3c6c75b9a9cbe97c57b733acece">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>29 分钟  <i class="fas fa-pencil-alt"> </i>4.3 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/03/10/ComputerInternet/Computer-Internet/">计网学习笔记（1）</a></h1><div class="content"><p>:::info</p>
 <p>前言概要：知识点是根据《计算机网络：自顶向下方法》来整理的，内容以及其顺序可能与其他书本有出入</p>
 <p>这篇博客是根据每一节写出我认为可能会考到的点或者说是需要知道的点，所以仅供参考</p>
@@ -394,7 +394,7 @@
 <p>就是说，发送端在向接收端传输一个分组时，接收端会将先到达的比特（分组的一部分）储存在缓存区，等到整个分组到达后，接收端才会向出链路传递这个分组</p>
 <p>假设传输速率为R bps，两端之间的距离为L，那么接收端接收到整个分组所需的时间为 <code>L/R</code> s</p>
 <p>如果接收端是路由器，两端分别是发送端和接收端</p>
-<p><img src="./Computer-Internet.assets/image-20240324153633727.png" alt="image-20240324153633727"></p>
+<p><img src="./Computer-Internet/image-20240324153633727.png" alt="image-20240324153633727"></p>
 <p>发送端想要发送4个分组给接收端</p>
 <ol>
 <li><p><code>d = 0 s</code>时，发送端开始发送分组；</p>
@@ -423,12 +423,12 @@
 <h4 id="电路交换网络中的复用"><a href="#电路交换网络中的复用" class="headerlink" title="电路交换网络中的复用"></a>电路交换网络中的复用</h4><h5 id="频分复用（Frequency-Division-Multiplexing，FDM）"><a href="#频分复用（Frequency-Division-Multiplexing，FDM）" class="headerlink" title="频分复用（Frequency-Division Multiplexing，FDM）"></a>频分复用（Frequency-Division Multiplexing，FDM）</h5><p><del>书上说的读不太懂，不知道是不是翻译问题</del>。大概总结一下，就是==用户在分配到一定的频带后，在通信过程中自始至终都占用这个频带==。</p>
 <p>（书上说的是：链路的频谱由跨越链路创建的所有连接共享。特别是，在连接期间链路为每条连接专用一个频段）</p>
 <p>下图则是FDM的图示，各路信号在同样的时间占用不同的带宽（这里指的是频带宽度而不是不是数据传输速率）</p>
-<p><img src="./Computer-Internet.assets/image-20240324161809880.png" alt="image-20240324161809880"></p>
+<p><img src="./Computer-Internet/image-20240324161809880.png" alt="image-20240324161809880"></p>
 <p>咱之前听收音机或者在坐车时，收听的广播就是用频分复用的方式来给我们传递信息的</p>
 <h5 id="时分复用（Time-Devision-Multiplexing，TDM）"><a href="#时分复用（Time-Devision-Multiplexing，TDM）" class="headerlink" title="时分复用（Time-Devision Multiplexing，TDM）"></a>时分复用（Time-Devision Multiplexing，TDM）</h5><p>在这条链路中，时间会被等分为一段段TDM帧，每一段帧又会被划分出相同且固定的时隙。当网络跨越一条链路创建一条连接时，网络在每个帧中为该连接指定一个时隙。这些时隙专门由该连接单独使用，一个时隙（在每个帧内）可用于传输该连接的数据。</p>
 <p>下图是TDM的图示，序号2则是指定传输数据的专用时隙，周期为一个帧的长度。</p>
 <p>在计算TDM传输速率时，若每秒传输2000帧，一个时隙大小是8bit，则传输速率为16kbps</p>
-<p><img src="./Computer-Internet.assets/image-20240324162936954.png" alt="image-20240324162936954"></p>
+<p><img src="./Computer-Internet/image-20240324162936954.png" alt="image-20240324162936954"></p>
 <p>:::danger no-icon 分组交换和电路交换的区别</p>
 <ol>
 <li><p>分组交换不会预留端系统之间沿路径通信所需的资源（如缓存，链路传输速率），电路交换会预留；</p>
@@ -443,15 +443,15 @@
 </li>
 </ol>
 <p>:::</p>
-<h3 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h3><p><img src="./Computer-Internet.assets/image-20240731131330531.png" alt="image-20240731131330531"></p>
+<h3 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h3><p><img src="./Computer-Internet/image-20240731131330531.png" alt="image-20240731131330531"></p>
 <p>这个倒是没啥可说的，直接上图</p>
-<p><img src="./Computer-Internet.assets/image-20240324165238018.png" alt="image-20240324165238018"></p>
+<p><img src="./Computer-Internet/image-20240324165238018.png" alt="image-20240324165238018"></p>
 <p>接入ISP被称为<strong>客户</strong>；</p>
 <p>==IXP（Internet Exchange Point）是因特网交接点==，作用是可以使多个ISP对等，对等的目的是直接将若干个ISP网络连接到一起，这样可以减少对第三方提供商的依赖，减少了数据传输成本</p>
 <p>除了第一层，客户与其他ISP可以选择多个ISP连接，这样可以在一个ISP无法正常运作的情况下，客户与其他ISP仍然能正常进行数据交换</p>
 <h2 id="分组交换网中的时延、丢包和吞吐量"><a href="#分组交换网中的时延、丢包和吞吐量" class="headerlink" title="分组交换网中的时延、丢包和吞吐量"></a>分组交换网中的时延、丢包和吞吐量</h2><h3 id="分组交换网中的时延概述"><a href="#分组交换网中的时延概述" class="headerlink" title="分组交换网中的时延概述"></a>分组交换网中的时延概述</h3><p>==几个重要的时延==：节点处理时延(nodal processing delay)、 排队时延(queuing delay)、传输时延(transmission delay)、传播时延(propagation delay)</p>
 <p>这几种时延加起来就是==节点总时延（total nodal delay）==</p>
-<p><img src="./Computer-Internet.assets/image-20240324170527337.png" alt="image-20240324170527337"></p>
+<p><img src="./Computer-Internet/image-20240324170527337.png" alt="image-20240324170527337"></p>
 <p>==一个类比来表明传输时延和传播时延的区别：前者指的是声音从嗓子到嘴巴这一段所需的时间，后者则是从一处传到另一处时，另一处完全接收到声音所需的时间==</p>
 <p>:::warning</p>
 <p>处理时延是以微秒或者更低的数量级作为单位，排队时延是以毫秒或微秒作为单位，传输时延和传播时延是以毫秒为作为单位</p>
@@ -464,7 +464,7 @@
 <p>当<code>La &gt; R</code>时，比特到达队列的平均速率大于传输速率，如此下去会使排队队列趋近于无穷大，进而导致排队时延无限大</p>
 <p>（可以类比于公路上行驶的车辆，若单位时间内进入公路的汽车大于离开公路的汽车，则会导致车辆队列慢慢建立起来，最后导致拥堵）</p>
 <p>当<code>0 &lt; La &lt;= R</code>时，平均排队时延和流量强度的关系如下图</p>
-<p><img src="./Computer-Internet.assets/image-20240324175059657.png" alt="image-20240324175059657"></p>
+<p><img src="./Computer-Internet/image-20240324175059657.png" alt="image-20240324175059657"></p>
 <p>由于排队容量有限，所以当排队序列被充满后，路由器会将后面到来的分组丢弃掉，这就是常说的丢包</p>
 <h3 id="端到端时延"><a href="#端到端时延" class="headerlink" title="端到端时延"></a>端到端时延</h3><p>用d<sub>end-end</sub>表示，则</p>
 <p>​                                                                            d<sub>end-end</sub> = N * (d<sub>proc</sub>+d<sub>trans</sub>+d<sub>prop</sub>)</p>
@@ -476,7 +476,7 @@
 <p>各层的所有协议称为==协议栈==。</p>
 <p>因特网的协议栈自顶向下为：==应用层，运输层，网络层，管理层，物理层==</p>
 <p>ISO OSI参考模型为：==应用层，表示层，会话层，运输层，网络层，管理层，物理层==</p>
-<p><img src="./Computer-Internet.assets/image-20240324222649539.png" alt="image-20240324222649539"></p>
+<p><img src="./Computer-Internet/image-20240324222649539.png" alt="image-20240324222649539"></p>
 <h5 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h5><p>应用层是==网络应用程序和它们的应用层协议留存的地方==。</p>
 <p>应用层包含了许多协议，如==HTTP（提供Web请求和文档的传送，SMTP（提供电子邮件报文的传送），FTP（提供两个段系统之间的文件传送）==</p>
 <p>位于应用层的信息分组称为<strong>报文</strong></p>
@@ -500,7 +500,7 @@
 <p>然后首部将被接收端的运输层使用。运输层向网络层传递该报文段，网络层增加了如源和接收端系统地址等网络层首部信息（H_n），于是乎就生成了<strong>网络层数据报</strong>。</p>
 <p>接着数据报被传递给链路层。链路层增加它自己的链路层首部信息并生成<strong>链路层帧</strong>。</p>
 <p>照这样看来，每一层的一个分组具有两种类型的字段：==首部字段和有效载荷字段==，有效载荷字段一般来源于上一层的分组</p>
-<p><img src="./Computer-Internet.assets/image-20240324223837088.png" alt="image-20240324223837088"></p>
+<p><img src="./Computer-Internet/image-20240324223837088.png" alt="image-20240324223837088"></p>
 </div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/%E8%AE%A1%E7%BD%91/">计网</a></div>  <hr></div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/LUFFY.jpg" alt="Ins0mn1a"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ins0mn1a</p><p class="is-size-6 is-block">怎么才能睡个好觉呢？</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Guiyang!!!</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">21</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Luffys93" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Luffys93"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:1725237709@qq.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
                                 $.getJSON("https://v1.hitokoto.cn/", function (data) {
                                 if(data){

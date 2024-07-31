@@ -49,7 +49,7 @@
 <p>就是说，发送端在向接收端传输一个分组时，接收端会将先到达的比特（分组的一部分）储存在缓存区，等到整个分组到达后，接收端才会向出链路传递这个分组</p>
 <p>假设传输速率为R bps，两端之间的距离为L，那么接收端接收到整个分组所需的时间为 <code>L/R</code> s</p>
 <p>如果接收端是路由器，两端分别是发送端和接收端</p>
-<p><img src="./Computer-Internet.assets/image-20240324153633727.png" alt="image-20240324153633727"></p>
+<p><img src="./Computer-Internet/image-20240324153633727.png" alt="image-20240324153633727"></p>
 <p>发送端想要发送4个分组给接收端</p>
 <ol>
 <li><p><code>d = 0 s</code>时，发送端开始发送分组；</p>
@@ -78,12 +78,12 @@
 <h4 id="电路交换网络中的复用"><a href="#电路交换网络中的复用" class="headerlink" title="电路交换网络中的复用"></a>电路交换网络中的复用</h4><h5 id="频分复用（Frequency-Division-Multiplexing，FDM）"><a href="#频分复用（Frequency-Division-Multiplexing，FDM）" class="headerlink" title="频分复用（Frequency-Division Multiplexing，FDM）"></a>频分复用（Frequency-Division Multiplexing，FDM）</h5><p><del>书上说的读不太懂，不知道是不是翻译问题</del>。大概总结一下，就是==用户在分配到一定的频带后，在通信过程中自始至终都占用这个频带==。</p>
 <p>（书上说的是：链路的频谱由跨越链路创建的所有连接共享。特别是，在连接期间链路为每条连接专用一个频段）</p>
 <p>下图则是FDM的图示，各路信号在同样的时间占用不同的带宽（这里指的是频带宽度而不是不是数据传输速率）</p>
-<p><img src="./Computer-Internet.assets/image-20240324161809880.png" alt="image-20240324161809880"></p>
+<p><img src="./Computer-Internet/image-20240324161809880.png" alt="image-20240324161809880"></p>
 <p>咱之前听收音机或者在坐车时，收听的广播就是用频分复用的方式来给我们传递信息的</p>
 <h5 id="时分复用（Time-Devision-Multiplexing，TDM）"><a href="#时分复用（Time-Devision-Multiplexing，TDM）" class="headerlink" title="时分复用（Time-Devision Multiplexing，TDM）"></a>时分复用（Time-Devision Multiplexing，TDM）</h5><p>在这条链路中，时间会被等分为一段段TDM帧，每一段帧又会被划分出相同且固定的时隙。当网络跨越一条链路创建一条连接时，网络在每个帧中为该连接指定一个时隙。这些时隙专门由该连接单独使用，一个时隙（在每个帧内）可用于传输该连接的数据。</p>
 <p>下图是TDM的图示，序号2则是指定传输数据的专用时隙，周期为一个帧的长度。</p>
 <p>在计算TDM传输速率时，若每秒传输2000帧，一个时隙大小是8bit，则传输速率为16kbps</p>
-<p><img src="./Computer-Internet.assets/image-20240324162936954.png" alt="image-20240324162936954"></p>
+<p><img src="./Computer-Internet/image-20240324162936954.png" alt="image-20240324162936954"></p>
 <p>:::danger no-icon 分组交换和电路交换的区别</p>
 <ol>
 <li><p>分组交换不会预留端系统之间沿路径通信所需的资源（如缓存，链路传输速率），电路交换会预留；</p>
@@ -98,15 +98,15 @@
 </li>
 </ol>
 <p>:::</p>
-<h3 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h3><p><img src="./Computer-Internet.assets/image-20240731131330531.png" alt="image-20240731131330531"></p>
+<h3 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h3><p><img src="./Computer-Internet/image-20240731131330531.png" alt="image-20240731131330531"></p>
 <p>这个倒是没啥可说的，直接上图</p>
-<p><img src="./Computer-Internet.assets/image-20240324165238018.png" alt="image-20240324165238018"></p>
+<p><img src="./Computer-Internet/image-20240324165238018.png" alt="image-20240324165238018"></p>
 <p>接入ISP被称为<strong>客户</strong>；</p>
 <p>==IXP（Internet Exchange Point）是因特网交接点==，作用是可以使多个ISP对等，对等的目的是直接将若干个ISP网络连接到一起，这样可以减少对第三方提供商的依赖，减少了数据传输成本</p>
 <p>除了第一层，客户与其他ISP可以选择多个ISP连接，这样可以在一个ISP无法正常运作的情况下，客户与其他ISP仍然能正常进行数据交换</p>
 <h2 id="分组交换网中的时延、丢包和吞吐量"><a href="#分组交换网中的时延、丢包和吞吐量" class="headerlink" title="分组交换网中的时延、丢包和吞吐量"></a>分组交换网中的时延、丢包和吞吐量</h2><h3 id="分组交换网中的时延概述"><a href="#分组交换网中的时延概述" class="headerlink" title="分组交换网中的时延概述"></a>分组交换网中的时延概述</h3><p>==几个重要的时延==：节点处理时延(nodal processing delay)、 排队时延(queuing delay)、传输时延(transmission delay)、传播时延(propagation delay)</p>
 <p>这几种时延加起来就是==节点总时延（total nodal delay）==</p>
-<p><img src="./Computer-Internet.assets/image-20240324170527337.png" alt="image-20240324170527337"></p>
+<p><img src="./Computer-Internet/image-20240324170527337.png" alt="image-20240324170527337"></p>
 <p>==一个类比来表明传输时延和传播时延的区别：前者指的是声音从嗓子到嘴巴这一段所需的时间，后者则是从一处传到另一处时，另一处完全接收到声音所需的时间==</p>
 <p>:::warning</p>
 <p>处理时延是以微秒或者更低的数量级作为单位，排队时延是以毫秒或微秒作为单位，传输时延和传播时延是以毫秒为作为单位</p>
@@ -119,7 +119,7 @@
 <p>当<code>La &gt; R</code>时，比特到达队列的平均速率大于传输速率，如此下去会使排队队列趋近于无穷大，进而导致排队时延无限大</p>
 <p>（可以类比于公路上行驶的车辆，若单位时间内进入公路的汽车大于离开公路的汽车，则会导致车辆队列慢慢建立起来，最后导致拥堵）</p>
 <p>当<code>0 &lt; La &lt;= R</code>时，平均排队时延和流量强度的关系如下图</p>
-<p><img src="./Computer-Internet.assets/image-20240324175059657.png" alt="image-20240324175059657"></p>
+<p><img src="./Computer-Internet/image-20240324175059657.png" alt="image-20240324175059657"></p>
 <p>由于排队容量有限，所以当排队序列被充满后，路由器会将后面到来的分组丢弃掉，这就是常说的丢包</p>
 <h3 id="端到端时延"><a href="#端到端时延" class="headerlink" title="端到端时延"></a>端到端时延</h3><p>用d<sub>end-end</sub>表示，则</p>
 <p>​                                                                            d<sub>end-end</sub> = N * (d<sub>proc</sub>+d<sub>trans</sub>+d<sub>prop</sub>)</p>
@@ -131,7 +131,7 @@
 <p>各层的所有协议称为==协议栈==。</p>
 <p>因特网的协议栈自顶向下为：==应用层，运输层，网络层，管理层，物理层==</p>
 <p>ISO OSI参考模型为：==应用层，表示层，会话层，运输层，网络层，管理层，物理层==</p>
-<p><img src="./Computer-Internet.assets/image-20240324222649539.png" alt="image-20240324222649539"></p>
+<p><img src="./Computer-Internet/image-20240324222649539.png" alt="image-20240324222649539"></p>
 <h5 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h5><p>应用层是==网络应用程序和它们的应用层协议留存的地方==。</p>
 <p>应用层包含了许多协议，如==HTTP（提供Web请求和文档的传送，SMTP（提供电子邮件报文的传送），FTP（提供两个段系统之间的文件传送）==</p>
 <p>位于应用层的信息分组称为<strong>报文</strong></p>
@@ -155,7 +155,7 @@
 <p>然后首部将被接收端的运输层使用。运输层向网络层传递该报文段，网络层增加了如源和接收端系统地址等网络层首部信息（H_n），于是乎就生成了<strong>网络层数据报</strong>。</p>
 <p>接着数据报被传递给链路层。链路层增加它自己的链路层首部信息并生成<strong>链路层帧</strong>。</p>
 <p>照这样看来，每一层的一个分组具有两种类型的字段：==首部字段和有效载荷字段==，有效载荷字段一般来源于上一层的分组</p>
-<p><img src="./Computer-Internet.assets/image-20240324223837088.png" alt="image-20240324223837088"></p>
+<p><img src="./Computer-Internet/image-20240324223837088.png" alt="image-20240324223837088"></p>
 </div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/%E8%AE%A1%E7%BD%91/">计网</a></div>  <hr></div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/2/">上一页</a></div><div class="pagination-next is-invisible is-hidden-mobile"><a href="/page/4/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link" href="/page/2/">2</a></li><li><a class="pagination-link is-current" href="/page/3/">3</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/LUFFY.jpg" alt="Ins0mn1a"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ins0mn1a</p><p class="is-size-6 is-block">怎么才能睡个好觉呢？</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Guiyang!!!</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">21</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Luffys93" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Luffys93"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:1725237709@qq.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
                                 $.getJSON("https://v1.hitokoto.cn/", function (data) {
                                 if(data){
